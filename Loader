@@ -15,6 +15,8 @@ local engine = loadstring(game:HttpGet("https://raw.githubusercontent.com/Singul
 -- Game IDs
 local scriptHub = {
    [16498193900] = { name = "Lootify", url = "https://raw.githubusercontent.com/Cheemos/PanHubV2/refs/heads/main/Scripts/Lootify" },
+   [116434053579571] = { name = "Rorvik", url = "https://raw.githubusercontent.com/Cheemos/PanHubV2/refs/heads/main/Scripts/RORVIK" },
+    
 }
 
 local gameId = game.PlaceId
