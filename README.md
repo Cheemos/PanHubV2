@@ -7,4 +7,5 @@
 To use the script, copy and paste the following loadstring into your Roblox script executor:
 
 ```lua
-https://raw.githubusercontent.com/Cheemos/PanHubV2/refs/heads/main/Loader```
+https://raw.githubusercontent.com/Cheemos/PanHubV2/refs/heads/main/Loader
+```
