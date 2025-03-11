@@ -1,0 +1,62 @@
+task.spawn(function()
+    local VirtualInputManager = game:GetService("VirtualInputManager")
+
+    while true do
+        wait(60)  -- Triggers every 60 seconds
+        VirtualInputManager:SendKeyEvent(true, "F13", false, game)  -- Press F13
+        wait(0.1)
+        VirtualInputManager:SendKeyEvent(false, "F13", false, game)  -- Release F13
+        print("Simulated F13 key press to prevent AFK.")
+    end
+end)
+
+local engine = loadstring(game:HttpGet("https://raw.githubusercontent.com/Singularity5490/rbimgui-2/main/rbimgui-2.lua"))()
+
+-- Game IDs
+local scriptHub = {
+   
+}
+
+local gameId = game.PlaceId
+
+local window = engine.new({ text = "PanHubV2", color = Color3.new(0.2, 0.4, 0.8) })
+window.open()
+
+local scriptTab = window.new({ text = "Scripts" })
+scriptTab.show()
+
+local availableScriptsFolder = scriptTab.new("folder", { text = "Available Scripts", color = Color3.new(0.1, 0.6, 0.1) })
+availableScriptsFolder.open()
+
+local function loadScript(url)
+    local success, script = pcall(game.HttpGet, game, url)
+    if success then
+        loadstring(script)()
+        print("Successfully loaded script for this game!")
+    else
+        warn("Failed to load script: " .. tostring(script))
+    end
+end
+
+if scriptHub[gameId] then
+    availableScriptsFolder.new("label", { text = "Loading: " .. scriptHub[gameId].name })
+
+    task.delay(2, function()
+        loadScript(scriptHub[gameId].url)
+    end)
+else
+    availableScriptsFolder.new("label", { text = "No script available for this game." })
+
+    for id, data in pairs(scriptHub) do
+        local button = availableScriptsFolder.new("button", { text = data.name })
+        button.event:Connect(function()
+            print("Loading script for: " .. data.name)
+            loadScript(data.url)
+        end)
+    end
+end
+
+task.delay(5, function()
+    local discordInviter = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Discord%20Inviter/Source.lua"))()
+    discordInviter.Join("https://discord.gg/JhNvSkcmZm")
+end)
