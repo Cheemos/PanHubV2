@@ -7,5 +7,4 @@
 To use the script, copy and paste the following loadstring into your Roblox script executor:
 
 ```lua
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Cheemos/PanHub/refs/heads/main/HubLoader"))()
-```
+https://raw.githubusercontent.com/Cheemos/PanHubV2/refs/heads/main/Loader```
