@@ -2,11 +2,10 @@ task.spawn(function()
     local VirtualInputManager = game:GetService("VirtualInputManager")
 
     while true do
-        wait(60)  -- Triggers every 60 seconds
-        VirtualInputManager:SendKeyEvent(true, "F13", false, game)  -- Press F13
+        wait(60)  
+        VirtualInputManager:SendKeyEvent(true, "F13", false, game)  
         wait(0.1)
-        VirtualInputManager:SendKeyEvent(false, "F13", false, game)  -- Release F13
-        print("Simulated F13 key press to prevent AFK.")
+        VirtualInputManager:SendKeyEvent(false, "F13", false, game)  
     end
 end)
 
@@ -16,7 +15,7 @@ local engine = loadstring(game:HttpGet("https://raw.githubusercontent.com/Singul
 local scriptHub = {
    [16498193900] = { name = "Lootify", url = "https://raw.githubusercontent.com/Cheemos/PanHubV2/refs/heads/main/Scripts/Lootify" },
    [116434053579571] = { name = "Rorvik", url = "https://raw.githubusercontent.com/Cheemos/PanHubV2/refs/heads/main/Scripts/RORVIK" },
-    
+   [116434053579571] = { name = "Rorvik", url = "https://raw.githubusercontent.com/Cheemos/PanHubV2/refs/heads/main/Scripts/DepthlessRPG" },
 }
 
 local gameId = game.PlaceId
